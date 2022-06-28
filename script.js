@@ -11,8 +11,8 @@ const clock = () => {
     let min = time.getMinutes();
     let sec = time.getSeconds();
 
-    document.querySelector(".time").innerText = "Time: " + hour + ":" + min + ":" + sec;
-    document.querySelector(".date").innerText = "Date: " + dat + "-" + month + "-" + year;
+    document.querySelector(".time").innerText = hour + ":" + min + ":" + sec;
+    document.querySelector(".date").innerText = dat + "-" + month + "-" + year;
 }
 clock();
 
@@ -20,17 +20,21 @@ setInterval(clock, 1000);
 // end watch section
 
 //stop watch section
+
 let millSec = document.querySelector(".mill");
 let sec = document.querySelector('.sec');
 let min = document.querySelector('.min');
 let hour = document.querySelector('.hour');
 
 
-millSec.innerText = '00';
-sec.innerText = '00';
-min.innerText = '00';
-hour.innerText = '00';
 
+const timer = () => {
+    millSec.innerText = '00';
+    sec.innerText = '00';
+    min.innerText = '00';
+    hour.innerText = '00';
+}
+timer();
 
 let start = document.querySelector('.start');
 let stop = document.querySelector('.stop');
@@ -79,9 +83,6 @@ start.addEventListener('click', () => {
 
 
 reset.addEventListener('click', () => {
-    millSec.innerText = '00';
-    sec.innerText = '00';
-    min.innerText = '00';
-    hour.innerText = '00';
+    timer()
 })
 
